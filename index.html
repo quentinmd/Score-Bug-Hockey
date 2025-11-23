@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hockey Broadcast Score Bug</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Kanit', sans-serif;
+        background-color: #000;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      /* 3D Perspective for Score Flip */
+      .perspective-container {
+        perspective: 1000px;
+      }
+
+      /* Custom Broadcast Easing */
+      .ease-broadcast {
+        transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Animations */
+      @keyframes flipIn {
+        0% { transform: rotateX(-90deg); opacity: 0; }
+        100% { transform: rotateX(0deg); opacity: 1; }
+      }
+
+      @keyframes flashRed {
+        0%, 100% { background-color: #1e1e1e; color: white; }
+        50% { background-color: #dc2626; color: white; }
+      }
+      
+      @keyframes flashText {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.1); }
+      }
+
+      .animate-flip-in {
+        animation: flipIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .animate-goal-bg {
+        animation: flashRed 0.8s infinite;
+      }
+
+      .animate-goal-text {
+        animation: flashText 0.4s infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

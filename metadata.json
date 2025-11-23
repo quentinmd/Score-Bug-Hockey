@@ -1,0 +1,5 @@
+{
+  "name": "Score Bug V1",
+  "description": "A pixel-perfect reproduction of the French Ligue 1 2024-2025 broadcast overlay with React, Tailwind, and animations.",
+  "requestFramePermissions": []
+}
